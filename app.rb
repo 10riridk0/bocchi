@@ -8,3 +8,7 @@ end
 get '/chat' do
     erb :chat
 end
+
+get '/end' do 
+    erb :end
+end
