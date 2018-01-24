@@ -19,6 +19,6 @@ end
 def loadCSV
     csv = CSV.table("public/data.csv")
     linesCout = File.read("public/data.csv").count("\n")
-    print csv[rand(linesCout)]
+    word =  csv[rand(linesCout)]
 end
 
