@@ -8,6 +8,7 @@ end
 
 get '/chat' do
     @data = loadCSV
+    @send_message =  params[:message]
     erb :chat
 end
 

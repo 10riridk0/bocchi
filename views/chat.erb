@@ -2,13 +2,21 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8"/>
-  <%# <script type="text/javascript" src="chat.js"></script> %>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script type="text/javascript" src="chat.js"></script>
   <title>ChatRoom(仮)</title>
 </head>
 <body>
-<h1>チャットできる場所になる予定</h1>
-<div id=main>
-<p><%= @data %></p>
+<header class="head">
+<h1>ぼっちゃっと</h1>
+</header>
+
+<div id="contents">
+  <div id="chat-main"></div>
+  <div id="chat-message">
+    <textarea id="message" cols="30" row="10" placeholder="please send message"></textarea>
+    <input type="button" id="submit" class="buttom" value="submit">
+  </div>
 </div>
 <div id=buttom>
   <a href="/">最初に戻る</a>
