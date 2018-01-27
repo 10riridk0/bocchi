@@ -18,8 +18,8 @@ end
 
 # csv読み込む関数
 def loadCSV
-    csv = CSV.table("public/data.csv")
-    linesCout = File.read("public/data.csv").count("\n")
+    csv = CSV.table("public/data/data.csv")
+    linesCout = File.read("public/data/data.csv").count("\n")
     word =  csv[rand(linesCout)]
 end
 
