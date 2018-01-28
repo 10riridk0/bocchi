@@ -5,12 +5,12 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <link rel="stylesheet" href="/css/styles.css" />
   <script type="text/javascript" src="/js/chat.js"></script>
-  <title>ChatRoom(仮)</title>
+  <title>チャット</title>
 </head>
 
 <body>
 <header class="head">
-<h1 class="headline">bocchat</h1>
+<h1 class="headline">ぼっちのちゃっと</h1>
 <a href="/end" class="button">おわる</a>
 </header>
 
@@ -19,11 +19,13 @@
 <div id="comments">
   <% @comments.each do |comment| %>
     <p><%= escape_html "#{comment.body}" %></p>
+    <p><%= escape_html @reply.call() %></p>
   <% end %>
 </div>
+
 <div id="send-comment">
-  <textarea id="comment-body" cols="30" row="10" placeholder="please send message"></textarea>
-  <input type="button" id="submit-comment" class="button" value="submit"></input>
+  <input type="text" id="comment-body"></textarea>
+  <input type="button" id="submit-comment" value="submit">
 </div>
 </body>
 </html>

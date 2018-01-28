@@ -21,7 +21,8 @@ get '/' do
 end
 
 get '/chat' do
-    @comments = Comment.order('id desc')
+    @comments = Comment.order('id asc')
+    @reply = method(:loadCSV)
     erb :chat
 end
 
