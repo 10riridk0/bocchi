@@ -7,13 +7,14 @@
   <!--使うwebフォント-->
   <link href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
   <script type="text/javascript" src="/js/chat.js"></script>
   <title>チャット</title>
 </head>
 
 <body>
 <header class="head">
-<h1 class="headline">ぼっちのちゃっと</h1>
+<h1 class="headline">bocchi</h1>
 <a href="/end" class="button">おわる</a>
 </header>
 
@@ -21,8 +22,12 @@
   <!--最新のメッセージ表示-->
 <div id="comments">
   <% @comments.each do |comment| %>
-    <p class="comment"><%= escape_html "#{comment.body}" %></p>
-    <p class="comment reply"><%= escape_html @reply.call() %></p>
+    <div class="comment">
+      <p><%= escape_html "#{comment.body}" %></p>
+    </div>
+    <div class="comment reply">
+      <p><%= escape_html @reply.call() %></p>
+    </div>
   <% end %>
 </div>
 

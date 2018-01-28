@@ -1,0 +1,50 @@
+body {
+    background: linear-gradient(135deg, #9068BE, #BB68BE);
+}
+
+#main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1em;
+}
+
+#menu {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* 見出し  */
+
+.headline {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 10em;
+    color: #E6E6E6;
+}
+
+/*チャットに飛ぶやつ*/
+
+.button {
+    padding: 0 1em;
+    text-decoration: none;
+    position: relative;
+    color: #E6E6E6;
+    display: inline-block;
+    transition: .3s;
+}
+
+.button::after {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    content: '';
+    width: 0;
+    height: 1px;
+    background-color: #E6E6E6;
+    transition: .3s;
+    transform: translateX(-50%);
+}
+
+.button:hover::after {
+    width: 100%;
+}

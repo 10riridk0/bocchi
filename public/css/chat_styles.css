@@ -2,7 +2,7 @@ html,
 body {
     margin: 0px;
     padding: 0px;
-    background-color: #E6E6E6;
+    background-color: #A2A9AF;
     font-family: 'Lato', 'Noto Sans Japanese', '游ゴシック Medium', '游ゴシック体', 'Yu Gothic Medium', YuGothic, 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
 }
 
@@ -17,7 +17,7 @@ body {
     align-items: center;
     position: fixed;
     z-index: 99;
-    background-color: #9068BE;
+    background: linear-gradient(100deg, #9068BE, #BB68BE);
     width: 100%;
     height: 55px;
 }
@@ -28,6 +28,7 @@ body {
     margin-right: auto;
     margin-left: 10px;
     color: #E6E6E6;
+    font-family: 'Quicksand', sans-serif;
 }
 
 #comment-body {
@@ -72,7 +73,6 @@ body {
     height: 1px;
     background-color: #E6E6E6;
     transition: .3s;
-    -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
 }
 
@@ -128,10 +128,15 @@ body {
     border-color: transparent #9068BE transparent transparent;
 }
 
+.comment p {
+    margin: 0;
+    padding: 0;
+}
+
 .reply {
-    background-color: #FFFFF2;
+    background-color: #EBEDEC;
 }
 
 .reply::after {
-    border-color: transparent #FFFFF2 transparent transparent;
+    border-color: transparent #EBEDEC transparent transparent;
 }
