@@ -1,4 +1,4 @@
-function escaoeHTML(s) {
+function escapeHTML(s) {
     return $('<div>').text(s).html();
 }
 $(function () {
@@ -18,7 +18,7 @@ $(function () {
                     dataType: "json"
                 })
                 .done(function (res) {
-                    $("#comments").prepend('<p>' + escapeHTML(res.body) + ' by ' + '</p>');
+                    $("#comments").prepend('<p>' + escapeHTML(res.comment_body) + '</p>');
                 });
         });
     });
