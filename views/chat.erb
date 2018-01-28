@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8"/>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <link rel="stylesheet" href="/css/styles.css" />
   <script type="text/javascript" src="/js/chat.js"></script>
   <title>ChatRoom(仮)</title>
@@ -14,12 +14,16 @@
 <a href="/end" class="button">おわる</a>
 </header>
 
-<div id="contents">
-  <div id="chat-main"></div>
-  <div id="chat-message">
-    <textarea id="message" cols="30" row="10" placeholder="please send message"></textarea>
-    <input type="button" id="submit" class="buttom" value="submit">
-  </div>
+<div class="comment-view">
+  <!--最新のメッセージ表示-->
+<div id="comments">
+  <% @comments.each do |comment| %>
+    <p><%= escape_html "#{comment.body}" %></p>
+  <% end %>
+</div>
+<div id="send-comment">
+  <textarea id="comment-body" cols="30" row="10" placeholder="please send message"></textarea>
+  <input type="button" id="submit-comment" class="button" value="submit"></input>
 </div>
 </body>
 </html>

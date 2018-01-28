@@ -1,18 +1,42 @@
 require 'sinatra'
 require 'sinatra/reloader'
+require 'sqlite3'
+require 'active_record'
 require 'csv'
+
+ActiveRecord::Base.establish_connection(
+  "adapter" => "sqlite3",
+  "database" => "./db/bbs.db"
+)
+
+after do
+  ActiveRecord::Base.connection.close
+end
+
+class Comment < ActiveRecord::Base
+end
 
 get '/' do
     erb :index
 end
 
 get '/chat' do
-    @data = loadCSV
-    @send_message =  params[:message]
+    @comments = Comment.order('id desc')
     erb :chat
 end
 
-get '/end' do 
+post '/chat/comment' do
+    Comment.create({
+      body: params[:body]
+    })
+  end
+  
+get '/chat/comments/last' do
+    comment = Comment.last
+    {comment_body: comment.body}.to_json
+end
+
+get '/end' do
     erb :end
 end
 

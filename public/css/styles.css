@@ -47,3 +47,22 @@ body {
 .button:hover::after {
     width: 100%;
 }
+
+/* .submit-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    height: 30px;
+    width: 50px;
+    border-radius: 5px;
+    background-color: #9068BE;
+    color: #E6E6E6;
+    transition: all 300ms 0s ease;
+} */
+
+/* .submit-button:hover {
+    background-color: #E6E6E6;
+    color: #9068BE;
+} */
