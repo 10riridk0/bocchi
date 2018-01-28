@@ -1,11 +1,18 @@
+/*共通部になりそう*/
+
 html,
 body {
     margin: 0px;
     padding: 0px;
-    background-color: #E6E6E6;
+    background-color: #a4b0be;
+    width: 100%;
 }
 
 .head {
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
     margin: 0%;
     padding: 0%;
     background-color: #9068BE;
@@ -48,21 +55,81 @@ body {
     width: 100%;
 }
 
-/* .submit-button {
+/*チャット*/
+
+#comment-body {
+    width: 90%;
+    height: 40px;
+    background-color: #eee;
+    border: 1px solid #bebebe;
+    font-size: 1em;
+    text-indent: 0.7em;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+#comment-view {
+    height: 1289px;
+}
+
+#send-comment {
+    height: 60px;
+    width: 100%;
+    bottom: 0%;
+    position: fixed;
+    background-color: #E6E6E6;
+}
+
+#submit-comment {
     background-color: transparent;
     border: none;
     cursor: pointer;
     outline: none;
     padding: 0;
-    height: 30px;
-    width: 50px;
+    height: 40px;
+    width: 90px;
     border-radius: 5px;
     background-color: #9068BE;
     color: #E6E6E6;
     transition: all 300ms 0s ease;
-} */
+}
 
-/* .submit-button:hover {
+#submit-comment:hover {
     background-color: #E6E6E6;
     color: #9068BE;
-} */
+}
+
+#comments {
+    display: block;
+}
+
+.comment {
+    padding: 15px 20px;
+    margin-left: 20px;
+    margin-top: 10px;
+    background-color: #9068BE;
+    position: relative;
+    border-radius: 5px;
+    width: 200px;
+}
+
+.comment::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    margin-top: -10px;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #9068BE transparent transparent;
+}
+
+.pair {
+    background-color: #FFFFF2;
+}
+
+.pair::after {
+    border-color: transparent #FFFFF2 transparent transparent;
+}

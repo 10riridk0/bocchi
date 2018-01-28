@@ -21,13 +21,15 @@ get '/' do
 end
 
 get '/chat' do
-    @comments = Comment.order('id desc')
+    @comments = Comment.order('id asc')
+    @pair = loadCSV
     erb :chat
 end
 
 post '/chat/comment' do
     Comment.create({
-      body: params[:body]
+      body: params[:body],
+    #   pair: params[:pair]
     })
   end
   

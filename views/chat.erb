@@ -14,16 +14,51 @@
 <a href="/end" class="button">おわる</a>
 </header>
 
-<div class="comment-view">
+<div id="comment-view">
   <!--最新のメッセージ表示-->
 <div id="comments">
   <% @comments.each do |comment| %>
-    <p><%= escape_html "#{comment.body}" %></p>
+    <p class="comment"><%= escape_html "#{comment.body}" %></p>
+    <p class="comment pair"><%= @pair%></p>
+    <!--<p class="comment pair"><%= escape_html "#{comment.pair}"%>-->
   <% end %>
 </div>
 <div id="send-comment">
-  <textarea id="comment-body" cols="30" row="10" placeholder="please send message"></textarea>
-  <input type="button" id="submit-comment" class="button" value="submit"></input>
+  <input type="text" id="comment-body">
+  <input type="button" id="submit-comment" value="submit">
 </div>
 </body>
 </html>
+
+<!--
+<script type="text/javascript">
+function escaoeHTML(s) {
+    return $('<div>').text(s).html();
+}
+$(function () {
+    $("#submit-comment").click(function () {
+        var comment = $("#comment-body").val();
+        var pair = <%= @pair%>
+        var request = $.ajax({
+            type: "POST",
+            url: "/chat/comment",
+            data: {
+                body: comment,
+                pair: pair
+            }
+        });
+        request.done(function (msg) {
+            $.ajax({
+                    type: "GET",
+                    url: "/chat/comments/last",
+                    dataType: "json"
+                })
+                .done(function (res) {
+                    $("#comments").prepend('<p>' + escapeHTML(res.body) + '</p>');
+                    $("#comments").prepend('<p>' + escaoeHTML(res.pair) + '</p>');
+                });
+        });
+    });
+});
+</script>
+-->
