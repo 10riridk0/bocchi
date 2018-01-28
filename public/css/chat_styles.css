@@ -6,21 +6,52 @@ body {
     font-family: 'Lato', 'Noto Sans Japanese', '游ゴシック Medium', '游ゴシック体', 'Yu Gothic Medium', YuGothic, 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
 }
 
+/*ヘッダー*/
+
 .head {
     margin: 0%;
     padding: 0%;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    z-index: 99;
     background-color: #9068BE;
     width: 100%;
     height: 55px;
-    display: flex;
-    align-items: center;
 }
+
+/*ヘッダーの見出し*/
 
 .headline {
     margin-right: auto;
     margin-left: 10px;
     color: #E6E6E6;
 }
+
+#comment-body {
+    width: 90%;
+    height: 40px;
+    background-color: #eee;
+    border: 1px solid #bebebe;
+    font-size: 1em;
+    text-indent: 0.7em;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+/*一番下の入力してsubmitするところ*/
+
+#input-form {
+    height: 60px;
+    width: 100%;
+    bottom: 0%;
+    position: fixed;
+    background-color: #E6E6E6;
+}
+
+/*おわるボタン*/
 
 .button {
     margin-right: 10px;
@@ -49,21 +80,58 @@ body {
     width: 100%;
 }
 
-/* .submit-button {
+/*送信するボタン*/
+
+#submit-comment {
     background-color: transparent;
     border: none;
     cursor: pointer;
     outline: none;
     padding: 0;
-    height: 30px;
-    width: 50px;
+    height: 40px;
+    width: 80px;
     border-radius: 5px;
     background-color: #9068BE;
     color: #E6E6E6;
     transition: all 300ms 0s ease;
-} */
+}
 
-/* .submit-button:hover {
+#submit-comment:hover {
     background-color: #E6E6E6;
     color: #9068BE;
-} */
+}
+
+#comments {
+    display: block;
+}
+
+.comment {
+    padding: 15px 20px;
+    margin-left: 20px;
+    margin-top: 10px;
+    background-color: #9068BE;
+    position: relative;
+    border-radius: 5px;
+    width: 200px;
+}
+
+.comment::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    margin-top: -10px;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #9068BE transparent transparent;
+}
+
+.reply {
+    background-color: #FFFFF2;
+}
+
+.reply::after {
+    border-color: transparent #FFFFF2 transparent transparent;
+}

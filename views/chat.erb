@@ -21,14 +21,14 @@
   <!--最新のメッセージ表示-->
 <div id="comments">
   <% @comments.each do |comment| %>
-    <p><%= escape_html "#{comment.body}" %></p>
-    <p><%= escape_html @reply.call() %></p>
+    <p class="comment"><%= escape_html "#{comment.body}" %></p>
+    <p class="comment reply"><%= escape_html @reply.call() %></p>
   <% end %>
 </div>
 
-<div id="send-comment">
-  <input type="text" id="comment-body"></textarea>
-  <input type="button" id="submit-comment" value="submit">
+<div id="input-form">
+  <input type="text" id="comment-body">
+  <input type="button" id="submit-comment" value="送信">
 </div>
 </body>
 </html>
