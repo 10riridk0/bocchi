@@ -8,7 +8,7 @@ body {
 
 /*ヘッダー*/
 
-.head {
+#head {
     margin: 0%;
     padding: 0%;
     top: 0px;
@@ -24,7 +24,7 @@ body {
 
 /*ヘッダーの見出し*/
 
-.headline {
+#headline {
     margin-right: auto;
     margin-left: 10px;
     color: #E6E6E6;
@@ -112,7 +112,7 @@ body {
     display: block;
 }
 
-#comment {
+.comment {
     padding: 15px 20px;
     margin-right: 20px;
     margin-left: auto;
@@ -123,7 +123,7 @@ body {
     width: 300px;
 }
 
-#comment::after {
+.comment::after {
     content: "";
     position: absolute;
     top: 50%;
@@ -136,12 +136,12 @@ body {
     border-right-width: 0;
 }
 
-#comment p {
+.comment p {
     margin: 0;
     padding: 0;
 }
 
-#reply {
+.reply {
     padding: 15px 20px;
     margin-right: auto;
     margin-left: 20px;
@@ -152,7 +152,7 @@ body {
     width: 300px;
 }
 
-#reply::after {
+.reply::after {
     content: "";
     position: absolute;
     top: 50%;
@@ -165,7 +165,7 @@ body {
     border-left-width: 0;
 }
 
-#reply p {
+.reply p {
     margin: 0;
     padding: 0;
 }

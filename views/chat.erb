@@ -9,12 +9,12 @@
   <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
   <script type="text/javascript" src="/js/chat.js"></script>
-  <title>チャット</title>
+  <title>chat</title>
 </head>
 
 <body>
-<header class="head">
-<h1 class="headline">bocchi</h1>
+<header id="head">
+<h1 id="headline">bocchi</h1>
 <a href="/end" class="button">おわる</a>
 </header>
 
@@ -22,10 +22,10 @@
   <!--最新のメッセージ表示-->
 <div id="comments">
   <% @comments.each do |comment| %>
-    <div id="comment">
+    <div class="comment">
       <p><%= escape_html "#{comment.body}" %></p>
     </div>
-    <div id="reply">
+    <div class="reply">
       <p><%= escape_html @reply.call() %></p>
     </div>
   <% end %>
