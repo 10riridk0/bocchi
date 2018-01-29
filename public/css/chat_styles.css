@@ -101,6 +101,13 @@ body {
     color: #9068BE;
 }
 
+/* 吹き出しが大量に表示されてる部分 */
+
+#comment-view {
+    /*スクロールの設定*/
+    overflow: scroll;
+}
+
 #comments {
     display: block;
 }
