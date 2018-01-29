@@ -110,6 +110,7 @@ body {
 
 #comments {
     display: block;
+    padding-bottom: 65px;
 }
 
 .comment {
@@ -139,6 +140,12 @@ body {
 .comment p {
     margin: 0;
     padding: 0;
+}
+
+/*コメント吹き出しをひとつずらす*/
+
+.comment:first-child {
+    margin-top: 64px;
 }
 
 .reply {

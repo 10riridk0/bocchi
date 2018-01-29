@@ -31,10 +31,13 @@ post '/chat/comment' do
       body: params[:body]
     })
   end
-  
+
 get '/chat/comments/last' do
     comment = Comment.last
-    {comment_body: comment.body}.to_json
+    reply = loadCSV
+    {comment_body: comment.body,
+     reply_body: reply
+    }.to_json
 end
 
 get '/end' do
@@ -45,6 +48,6 @@ end
 def loadCSV
     csv = CSV.table("public/data/data.csv")
     linesCout = File.read("public/data/data.csv").count("\n")
-    word =  csv[rand(linesCout)]
+    word = csv[rand(linesCout)][0]
 end
 
